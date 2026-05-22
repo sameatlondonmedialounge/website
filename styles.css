@@ -1413,8 +1413,11 @@ select.form-input option { background: var(--dark); color: var(--white); }
     .studio-card[style*="height:400px"] { height: 280px !important; }
 
     /* Trust bar */
-    .trust-bar { padding: 1.2rem 0; }
+    .trust-bar { padding: 1.5rem 0 1.2rem; }
     .trust-label { font-size: 0.68rem; letter-spacing: 2px; }
+    .trust-subtitle { font-size: 0.75rem; margin-bottom: 1.2rem; }
+    .logo-item { height: 35px; max-width: 110px; }
+    .logo-track { gap: 2.5rem; animation-duration: 20s; }
 
     /* Testimonial cards */
     .testimonial-card { width: 310px; min-width: 310px; }
@@ -1703,8 +1706,9 @@ select.form-input option { background: var(--dark); color: var(--white); }
     background: rgba(139,92,246,0.04);
     border-top: 1px solid rgba(139,92,246,0.08);
     border-bottom: 1px solid rgba(139,92,246,0.08);
-    padding: 1.5rem 0;
+    padding: 2.5rem 0 2rem;
     text-align: center;
+    overflow: hidden;
 }
 .trust-label {
     font-family: 'Oswald', sans-serif;
@@ -1715,11 +1719,51 @@ select.form-input option { background: var(--dark); color: var(--white); }
     color: var(--text-muted);
     margin-bottom: 0.3rem;
 }
-.trust-placeholder {
+.trust-subtitle {
     font-size: 0.85rem;
     color: rgba(255,255,255,0.35);
-    margin: 0;
+    margin: 0 0 1.8rem;
     font-style: italic;
+}
+
+/* Logo Carousel */
+.logo-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.logo-track {
+    display: flex;
+    align-items: center;
+    gap: 3.5rem;
+    width: max-content;
+    animation: scrollLogos 30s linear infinite;
+}
+.logo-item {
+    height: 45px;
+    width: auto;
+    max-width: 140px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(1.8);
+    opacity: 0.5;
+    transition: all 0.4s ease;
+    flex-shrink: 0;
+}
+.logo-item:hover {
+    filter: grayscale(0%) brightness(1);
+    opacity: 1;
+    transform: scale(1.08);
+}
+@keyframes scrollLogos {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+}
+
+/* Pause on hover */
+.logo-carousel:hover .logo-track {
+    animation-play-state: paused;
 }
 
 /* ====== GOOGLE RATING BADGE ====== */
