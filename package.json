@@ -1,0 +1,15 @@
+{
+  "name": "london-media-lounge",
+  "version": "1.0.0",
+  "description": "London Media Lounge website with AI chatbot",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.21.0",
+    "openai": "^4.73.0",
+    "dotenv": "^16.4.5"
+  }
+}
