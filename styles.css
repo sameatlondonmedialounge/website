@@ -242,12 +242,29 @@ body {
 
 /* Mobile hamburger */
 .hamburger {
-    width: 32px; height: 24px;
-    display: none; flex-direction: column;
+    width: 34px;
+    height: 26px;
+    display: none;
+    flex-direction: column;
     justify-content: space-between;
-    cursor: pointer; border: none; background: none; padding: 0;
+    align-items: stretch;
+    cursor: pointer;
+    border: none;
+    background: none;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-appearance: none;
+    appearance: none;
 }
-.hamburger span { display: block; height: 2.5px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+.hamburger span {
+    display: block;
+    width: 100%;
+    height: 3px;
+    background: var(--white);
+    border-radius: 2px;
+    transition: 0.3s;
+    flex-shrink: 0;
+}
 .hamburger span:nth-child(2) { width: 65%; }
 
 /* ====== HERO SECTION (index page) ====== */
