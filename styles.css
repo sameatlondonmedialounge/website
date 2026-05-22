@@ -1413,11 +1413,11 @@ select.form-input option { background: var(--dark); color: var(--white); }
     .studio-card[style*="height:400px"] { height: 280px !important; }
 
     /* Trust bar */
-    .trust-bar { padding: 1.5rem 0 1.2rem; }
+    .trust-bar { padding: 2rem 0 1.5rem; }
     .trust-label { font-size: 0.68rem; letter-spacing: 2px; }
-    .trust-subtitle { font-size: 0.75rem; margin-bottom: 1.2rem; }
-    .logo-item { height: 35px; max-width: 110px; }
-    .logo-track { gap: 2.5rem; animation-duration: 20s; }
+    .trust-subtitle { font-size: 0.78rem; margin-bottom: 1.4rem; }
+    .logo-item { height: 38px; max-width: 120px; }
+    .logo-track { gap: 2.5rem; animation-duration: 22s; }
 
     /* Testimonial cards */
     .testimonial-card { width: 310px; min-width: 310px; }
@@ -1703,26 +1703,26 @@ select.form-input option { background: var(--dark); color: var(--white); }
 
 /* ====== TRUST BAR ====== */
 .trust-bar {
-    background: rgba(139,92,246,0.04);
-    border-top: 1px solid rgba(139,92,246,0.08);
-    border-bottom: 1px solid rgba(139,92,246,0.08);
-    padding: 2.5rem 0 2rem;
+    background: #f8f9fa;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 3rem 0 2.5rem;
     text-align: center;
     overflow: hidden;
 }
 .trust-label {
     font-family: 'Oswald', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 3px;
-    font-size: 0.75rem;
-    color: var(--text-muted);
-    margin-bottom: 0.3rem;
+    font-size: 0.8rem;
+    color: #333;
+    margin-bottom: 0.4rem;
 }
 .trust-subtitle {
-    font-size: 0.85rem;
-    color: rgba(255,255,255,0.35);
-    margin: 0 0 1.8rem;
+    font-size: 0.88rem;
+    color: #888;
+    margin: 0 0 2rem;
     font-style: italic;
 }
 
@@ -1731,28 +1731,26 @@ select.form-input option { background: var(--dark); color: var(--white); }
     position: relative;
     width: 100%;
     overflow: hidden;
-    mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
-    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 8%, black 92%, transparent 100%);
 }
 .logo-track {
     display: flex;
     align-items: center;
-    gap: 3.5rem;
+    gap: 4rem;
     width: max-content;
-    animation: scrollLogos 30s linear infinite;
+    animation: scrollLogos 35s linear infinite;
 }
 .logo-item {
-    height: 45px;
+    height: 50px;
     width: auto;
-    max-width: 140px;
+    max-width: 150px;
     object-fit: contain;
-    filter: grayscale(100%) brightness(1.8);
-    opacity: 0.5;
+    opacity: 0.85;
     transition: all 0.4s ease;
     flex-shrink: 0;
 }
 .logo-item:hover {
-    filter: grayscale(0%) brightness(1);
     opacity: 1;
     transform: scale(1.08);
 }
