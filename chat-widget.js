@@ -537,3 +537,23 @@
     welcome.addEventListener('click', (e) => { const b = e.target.closest('.lml-welcome-btn'); if (b) startChat(b.dataset.msg); });
     input.addEventListener('focus', () => { if (!chatStarted) startChat(); });
 })();
+
+// Close the mobile offcanvas menu when a nav link is tapped.
+// (We removed data-bs-dismiss from the links because it cancelled navigation
+// on mobile; this closes the menu without blocking the link.)
+(function () {
+    function bindMobileNav() {
+        var mobileNav = document.getElementById('mobileNav');
+        if (!mobileNav || !window.bootstrap || !window.bootstrap.Offcanvas) return;
+        mobileNav.querySelectorAll('a[href]').forEach(function (link) {
+            link.addEventListener('click', function () {
+                window.bootstrap.Offcanvas.getOrCreateInstance(mobileNav).hide();
+            });
+        });
+    }
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', bindMobileNav);
+    } else {
+        bindMobileNav();
+    }
+})();
