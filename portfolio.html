@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="London Media Lounge Portfolio — Real results for real creators. From 0 to 50,000+ subscribers. Explore our podcast and YouTube show case studies.">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="London Media Lounge">
+    <link rel="canonical" href="https://www.londonmedialounge.co.uk/portfolio.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="London Media Lounge">
+    <meta property="og:title" content="Portfolio | London Media Lounge — Podcast & YouTube Production Results">
+    <meta property="og:description" content="Real results for real creators. From 0 to 50,000+ subscribers. Explore our podcast and YouTube show case studies.">
+    <meta property="og:url" content="https://www.londonmedialounge.co.uk/portfolio.html">
+    <meta property="og:image" content="https://www.londonmedialounge.co.uk/assets/LML_STUDIO_PHOTOS-1.jpg">
+    <meta property="og:locale" content="en_GB">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@MediaLml">
+    <meta name="twitter:title" content="Portfolio | London Media Lounge">
+    <meta name="twitter:description" content="Real results for real creators. From 0 to 50,000+ subscribers.">
+    <title>Portfolio | London Media Lounge — Podcast & YouTube Production Results</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* ===== PORTFOLIO-SPECIFIC STYLES ===== */
+        .portfolio-category-header {
+            text-align: center;
+            padding: 5rem 0 3rem;
+        }
+        .portfolio-category-header .category-eyebrow {
+            display: inline-block;
+            font-size: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-light);
+            background: rgba(245,158,11,0.1);
+            border: 1px solid rgba(245,158,11,0.2);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            margin-bottom: 1.25rem;
+        }
+        .portfolio-category-header h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            font-weight: 700;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+            color: var(--white);
+            margin-bottom: 1rem;
+        }
+        .portfolio-category-header p {
+            color: var(--text-body);
+            max-width: 600px;
+            margin: 0 auto;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        /* ===== CASE STUDY CARD ===== */
+        .case-study {
+            padding: 5rem 0;
+            border-bottom: 1px solid rgba(139,92,246,0.1);
+        }
+        .case-study:last-of-type { border-bottom: none; }
+
+        .case-study-image-wrap {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            aspect-ratio: 4/3;
+            background: var(--darker);
+        }
+        .case-study-image-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .case-study-image-wrap:hover img { transform: scale(1.03); }
+        .case-study-image-wrap::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(139,92,246,0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .case-study-tag {
+            display: inline-block;
+            font-size: 0.7rem;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--purple-light);
+            background: rgba(139,92,246,0.12);
+            border: 1px solid rgba(139,92,246,0.25);
+            padding: 0.3rem 0.85rem;
+            border-radius: 50px;
+            margin-bottom: 1rem;
+        }
+        .case-study-title {
+            font-family: 'Oswald', sans-serif;
+            font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.02em;
+            color: var(--white);
+            margin-bottom: 1.25rem;
+            line-height: 1.2;
+        }
+        .case-study-title span { color: var(--accent-light); }
+
+        .case-study-body p {
+            color: var(--text-body);
+            font-size: 0.97rem;
+            line-height: 1.85;
+            margin-bottom: 1rem;
+        }
+        .case-study-body p:last-child { margin-bottom: 0; }
+
+        .case-study-stats {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin: 1.75rem 0;
+        }
+        .stat-pill {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            background: rgba(139,92,246,0.08);
+            border: 1px solid rgba(139,92,246,0.2);
+            border-radius: 50px;
+            padding: 0.5rem 1.1rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: var(--white);
+        }
+        .stat-pill i { color: var(--accent-light); font-size: 1rem; }
+
+        /* ===== THUMBNAIL GRID ===== */
+        .thumbs-label {
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-muted);
+            margin-bottom: 0.85rem;
+        }
+        .thumbs-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.6rem;
+            margin-top: 2rem;
+        }
+        .thumb-item {
+            border-radius: 8px;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: var(--darker);
+        }
+        .thumb-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease, opacity 0.3s ease;
+        }
+        .thumb-item:hover img {
+            transform: scale(1.06);
+            opacity: 0.9;
+        }
+
+        /* ===== CREATOR GRID (Notable & International) ===== */
+        .creator-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(139,92,246,0.12);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .creator-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(139,92,246,0.35);
+            box-shadow: 0 16px 48px rgba(0,0,0,0.4);
+        }
+        .creator-card-img {
+            width: 100%;
+            aspect-ratio: 16/9;
+            object-fit: cover;
+            display: block;
+        }
+        .creator-card-body {
+            padding: 1.25rem 1.4rem 1.5rem;
+        }
+        .creator-card-name {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+        }
+        .creator-card-body p {
+            color: var(--text-body);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        /* ===== SOCIAL MEDIA GRID ===== */
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.75rem;
+        }
+        .social-grid-item {
+            border-radius: 12px;
+            overflow: hidden;
+            aspect-ratio: 1;
+            background: var(--darker);
+        }
+        .social-grid-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+        .social-grid-item:hover img { transform: scale(1.05); }
+
+        .social-sub-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--accent-light);
+            margin-bottom: 1rem;
+        }
+
+        /* ===== DIVIDER STRIPE ===== */
+        .portfolio-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(139,92,246,0.3), transparent);
+            margin: 0;
+        }
+
+        @media (max-width: 767px) {
+            .thumbs-grid { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+            .social-grid { grid-template-columns: repeat(3, 1fr); gap: 0.4rem; }
+            .case-study-stats { gap: 0.75rem; }
+            .case-study { padding: 3.5rem 0; }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- ====== NAVBAR ====== -->
+<nav class="navbar-main" id="navbar">
+    <div class="navbar-inner">
+        <a href="index.html">
+            <img loading="eager" decoding="async" src="assets/logo-white.png" alt="London Media Lounge" class="nav-logo">
+        </a>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li class="nav-item has-dropdown">
+                <a href="services.html">Services <i class="bi bi-chevron-down dropdown-arrow"></i></a>
+                <div class="nav-dropdown">
+                    <a href="services.html#creative">Creative Studios</a>
+                    <a href="services.html#greenscreen">Green Screen Studio</a>
+                    <a href="services.html#voiceover">Voiceover Studio</a>
+                    <a href="services.html#dryhire">Dry Hire</a>
+                </div>
+            </li>
+            <li><a href="pricing.html">Pricing</a></li>
+            <li><a href="portfolio.html" class="active">Portfolio</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+        <div class="nav-right">
+            <div class="nav-socials">
+                <a href="https://www.instagram.com/londonmedialoungeuk/" target="_blank" rel="noopener noreferrer" class="nav-social-icon"><i class="bi bi-instagram"></i></a>
+                <a href="https://www.youtube.com/channel/UC1lhApdrV06e3BqA87CX6MQ" target="_blank" rel="noopener noreferrer" class="nav-social-icon"><i class="bi bi-youtube"></i></a>
+                <a href="https://www.linkedin.com/company/londonmedialounge/" target="_blank" rel="noopener noreferrer" class="nav-social-icon"><i class="bi bi-linkedin"></i></a>
+                <a href="https://www.facebook.com/londonmedialounge" target="_blank" rel="noopener noreferrer" class="nav-social-icon"><i class="bi bi-facebook"></i></a>
+            </div>
+            <a href="https://londonmedialoungestudio.simplybook.it/v2/#book" target="_blank" rel="noopener noreferrer" class="nav-book-btn">Book Now</a>
+        </div>
+        <button class="hamburger" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileNav">
+            <span></span><span></span><span></span>
+        </button>
+    </div>
+</nav>
+
+<!-- Mobile Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="mobileNav">
+    <div class="offcanvas-header">
+        <img loading="lazy" decoding="async" src="assets/logo-white.png" alt="London Media Lounge" style="height:40px;">
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <div class="mobile-dropdown-group">
+            <a href="services.html" class="mobile-nav-link">Services</a>
+            <div class="mobile-sub-links">
+                <a href="services.html#creative">Creative Studios</a>
+                <a href="services.html#greenscreen">Green Screen Studio</a>
+                <a href="services.html#voiceover">Voiceover Studio</a>
+                <a href="services.html#dryhire">Dry Hire</a>
+            </div>
+        </div>
+        <a href="pricing.html" class="mobile-nav-link">Pricing</a>
+        <a href="portfolio.html" class="mobile-nav-link active">Portfolio</a>
+        <a href="blog.html" class="mobile-nav-link">Blog</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <div class="mt-4">
+            <a href="https://londonmedialoungestudio.simplybook.it/v2/#book" target="_blank" rel="noopener noreferrer" class="btn-accent d-block text-center">Book Now</a>
+        </div>
+    </div>
+</div>
+
+<!-- ====== PAGE HERO ====== -->
+<section class="page-hero">
+    <div class="container">
+        <h1 data-aos="fade-up">Our <span style="color:var(--purple-light);">Portfolio</span></h1>
+        <p data-aos="fade-up" data-aos-delay="100">Real results for real creators. From launch to scale — here's what we've built together.</p>
+    </div>
+</section>
+
+<div class="stripe-purple"></div>
+
+<!-- ====== PODCASTS & YOUTUBE SHOWS ====== -->
+<section class="section-dark">
+    <div class="container">
+
+        <div class="portfolio-category-header" data-aos="fade-up">
+            <span class="category-eyebrow">Category</span>
+            <h2>Podcasts &amp; YouTube Shows</h2>
+            <p>End-to-end production, strategy, and growth for some of the UK's most recognised independent podcast brands.</p>
+        </div>
+
+        <div class="portfolio-divider mb-5"></div>
+
+        <!-- ===== CASE STUDY 1: ALEX KING ===== -->
+        <div class="case-study" id="alex-king">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="case-study-image-wrap">
+                        <img loading="lazy" src="assets/portfolio/case-alex-king.png" alt="Beyond The Board Room With Alex King — London Media Lounge">
+                    </div>
+                    <div class="thumbs-grid mt-3">
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/ak-thumb1.jpg" alt="Alex King episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/ak-thumb2.jpg" alt="Alex King episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/ak-thumb3.jpg" alt="Alex King episode thumbnail"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <span class="case-study-tag">Podcast &amp; YouTube</span>
+                    <h3 class="case-study-title">Beyond The Board Room<br><span>with Alex King</span></h3>
+                    <div class="case-study-stats">
+                        <div class="stat-pill"><i class="bi bi-people-fill"></i> 50,000+ Subscribers</div>
+                        <div class="stat-pill"><i class="bi bi-play-circle-fill"></i> Hundreds of Thousands of Views</div>
+                        <div class="stat-pill"><i class="bi bi-calendar-check"></i> 2 Years</div>
+                    </div>
+                    <div class="case-study-body">
+                        <p>Aleksandra King partnered with London Media Lounge from day one to launch and grow her YouTube podcast.</p>
+                        <p>London Media Lounge managed the full operation, including guest booking, production, editing, and short-form content strategy, building a consistent content engine designed for growth.</p>
+                        <p>In just two years, the channel has scaled to 50,000+ subscribers and generated hundreds of thousands of views, driven by a combination of long-form interviews and high-performing social clips.</p>
+                        <p>The result is a fast-growing podcast brand, with London Media Lounge playing a key role in its ongoing growth and content strategy.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CASE STUDY 2: MICAH MCLEAN ===== -->
+        <div class="case-study" id="micah-mclean">
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="case-study-image-wrap">
+                        <img loading="lazy" src="assets/portfolio/case-micah-mclean.png" alt="Micah McLean Talks — London Media Lounge">
+                    </div>
+                    <div class="thumbs-grid mt-3">
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/mm-thumb1.jpg" alt="Micah McLean episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/mm-thumb2.jpg" alt="Micah McLean episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/mm-thumb3.jpg" alt="Micah McLean episode thumbnail"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="case-study-tag">Podcast &amp; YouTube</span>
+                    <h3 class="case-study-title">Micah McLean Talks<br><span>with Micah McLean</span></h3>
+                    <div class="case-study-stats">
+                        <div class="stat-pill"><i class="bi bi-people-fill"></i> Nearly 30,000 Subscribers</div>
+                        <div class="stat-pill"><i class="bi bi-play-circle-fill"></i> Millions of Views</div>
+                        <div class="stat-pill"><i class="bi bi-graph-up-arrow"></i> Under 1K → 30K</div>
+                    </div>
+                    <div class="case-study-body">
+                        <p>London Media Lounge partnered with Micah McLean at an early stage, when his YouTube channel was still under 1,000 subscribers, to help build and scale his business-focused podcast, Micah McLean Talks.</p>
+                        <p>From the beginning, we provided full end-to-end support, managing high-profile interviewees, production, editing, and developing a strong clip strategy to maximise reach.</p>
+                        <p>A key part of the partnership has been maintaining consistency and structure, allowing the channel to grow steadily and sustainably.</p>
+                        <p>As a result, the channel has scaled from under 1K subscribers to nearly 30,000 subscribers, generating millions of views across its content. Today, Micah McLean Talks stands as a growing platform in the business podcast space.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CASE STUDY 3: ON THE BENCH ===== -->
+        <div class="case-study" id="on-the-bench">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="case-study-image-wrap">
+                        <img loading="lazy" src="assets/portfolio/case-on-the-bench.png" alt="On The Bench Podcast — London Media Lounge">
+                    </div>
+                    <div class="thumbs-grid mt-3">
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/otb-thumb1.jpg" alt="On The Bench episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/otb-thumb2.jpg" alt="On The Bench episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/otb-thumb3.jpg" alt="On The Bench episode thumbnail"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <span class="case-study-tag">Football Podcast</span>
+                    <h3 class="case-study-title">On The Bench<br><span>Podcast</span></h3>
+                    <div class="case-study-stats">
+                        <div class="stat-pill"><i class="bi bi-people-fill"></i> ~35,000 Subscribers</div>
+                        <div class="stat-pill"><i class="bi bi-play-circle-fill"></i> 20K–35K Views Per Episode</div>
+                        <div class="stat-pill"><i class="bi bi-calendar-check"></i> 2+ Years</div>
+                    </div>
+                    <div class="case-study-body">
+                        <p>London Media Lounge partnered with On The Bench, a football-focused podcast, after the team's initial studio setup didn't deliver the results they were looking for.</p>
+                        <p>We worked closely with the hosts over a two-year period, helping reshape the podcast across production, content, and growth strategy. Our work included full podcast production, developing a strong clip and promotion strategy, refining thumbnails, and building a studio setup tailored exactly to their vision.</p>
+                        <p>A key focus was consistency and creating content that performs both long-form and in short-form formats. As a result, the channel has grown to approximately 35,000 subscribers, with episodes consistently averaging between 20K–35K views.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CASE STUDY 4: THE CELEBRATION CHAIR ===== -->
+        <div class="case-study" id="celebration-chair">
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="case-study-image-wrap">
+                        <img loading="lazy" src="assets/portfolio/case-celebration-chair.png" alt="The Celebration Chair with Jazzie — London Media Lounge">
+                    </div>
+                    <div class="thumbs-grid mt-3">
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/cc-thumb1.jpg" alt="The Celebration Chair episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/cc-thumb2.jpg" alt="The Celebration Chair episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/cc-thumb3.jpg" alt="The Celebration Chair episode thumbnail"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="case-study-tag">Celebrity Interview Show</span>
+                    <h3 class="case-study-title">The Celebration Chair<br><span>with Jazzie</span></h3>
+                    <div class="case-study-stats">
+                        <div class="stat-pill"><i class="bi bi-star-fill"></i> High-Profile Guests</div>
+                        <div class="stat-pill"><i class="bi bi-camera-video-fill"></i> Premium Production</div>
+                        <div class="stat-pill"><i class="bi bi-award-fill"></i> K Koke &amp; Big Narstie</div>
+                    </div>
+                    <div class="case-study-body">
+                        <p>Jazzie Zonzolo chose London Media Lounge to produce his show, The Celebration Chair — an interview-style show built around high-quality conversations with high-profile guests.</p>
+                        <p>Jazzie trusted London Media Lounge due to our experience working with notable talent, as well as the level of care, comfort, and hospitality we provide to every guest in the studio. From the moment guests arrive to the final delivery of each episode, the focus was on creating a premium, seamless experience.</p>
+                        <p>We supported the show end-to-end — full production, set design tailored to Jazzie's vision, editing, graphics, intros/outros, and overall content direction. The show welcomed well-known names such as K Koke and Big Narstie, contributing to strong-performing episodes and consistent audience engagement.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CASE STUDY 5: GENERATION FOOTBALL ===== -->
+        <div class="case-study" id="generation-football">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5" data-aos="fade-right">
+                    <div class="case-study-image-wrap">
+                        <img loading="lazy" src="assets/portfolio/case-generation-football.png" alt="Generation Football — London Media Lounge">
+                    </div>
+                    <div class="thumbs-grid mt-3">
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/gf-thumb1.jpg" alt="Generation Football episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/gf-thumb2.jpg" alt="Generation Football episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/gf-thumb3.jpg" alt="Generation Football episode thumbnail"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-left">
+                    <span class="case-study-tag">Football Entertainment</span>
+                    <h3 class="case-study-title">Generation<br><span>Football</span></h3>
+                    <div class="case-study-stats">
+                        <div class="stat-pill"><i class="bi bi-people-fill"></i> 35K–40K Subscribers</div>
+                        <div class="stat-pill"><i class="bi bi-twitter-x"></i> 100K+ Social Followers</div>
+                        <div class="stat-pill"><i class="bi bi-play-circle-fill"></i> Millions of Views</div>
+                    </div>
+                    <div class="case-study-body">
+                        <p>London Media Lounge partnered with Generation Football from the very beginning, building the channel entirely from scratch with no prior audience or content base.</p>
+                        <p>From day one, every aspect of production was developed and managed in our studio — filming, editing, set design, and content strategy. What started as an idea has now grown into a highly successful multi-platform brand, reaching approximately 35K–40K YouTube subscribers, over 100K social media followers, and generating millions and millions of views.</p>
+                        <p>The impact of this growth has been significant: the team behind Generation Football have transitioned into full-time creators, with sponsorships and content revenue allowing them to leave their previous jobs entirely. A defining example of what consistent production and long-term strategy can achieve.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ===== CASE STUDY 6: SHAK WARNER ===== -->
+        <div class="case-study" id="shak-warner">
+            <div class="row align-items-center g-5 flex-lg-row-reverse">
+                <div class="col-lg-5" data-aos="fade-left">
+                    <div class="case-study-image-wrap">
+                        <img loading="lazy" src="assets/portfolio/case-shak-warner.png" alt="Shak Warner Unchained — London Media Lounge">
+                    </div>
+                    <div class="thumbs-grid mt-3">
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/sw-thumb1.jpg" alt="Shak Warner Unchained episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/sw-thumb2.jpg" alt="Shak Warner Unchained episode thumbnail"></div>
+                        <div class="thumb-item"><img loading="lazy" src="assets/portfolio/sw-thumb3.jpg" alt="Shak Warner Unchained episode thumbnail"></div>
+                    </div>
+                </div>
+                <div class="col-lg-7" data-aos="fade-right">
+                    <span class="case-study-tag">Investigative &amp; Commentary</span>
+                    <h3 class="case-study-title">Shak Warner<br><span>Unchained</span></h3>
+                    <div class="case-study-stats">
+                        <div class="stat-pill"><i class="bi bi-people-fill"></i> ~5,000 Subscribers</div>
+                        <div class="stat-pill"><i class="bi bi-play-circle-fill"></i> Millions of Views</div>
+                        <div class="stat-pill"><i class="bi bi-graph-up-arrow"></i> Millions in Short-Form Clips</div>
+                    </div>
+                    <div class="case-study-body">
+                        <p>London Media Lounge partnered with Shaq Warner to develop and produce his YouTube channel Shaq Warner Unchained, which focuses on investigative-style journalism, covering topics such as legal issues, conspiracies, and in-depth commentary.</p>
+                        <p>Our team supported full production, editing, and content direction to help shape a consistent and engaging format. We also established a strong clip strategy enabling content to perform across both YouTube and social media platforms.</p>
+                        <p>With only around a dozen core episodes, Shaq built a loyal audience and established a clear voice in his niche — generating millions of views and demonstrating the impact of consistency, strategy, and strong production support.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="stripe-purple"></div>
+
+<!-- ====== OTHER NOTABLE CREATORS ====== -->
+<section class="section-darkest">
+    <div class="container">
+
+        <div class="portfolio-category-header" data-aos="fade-up">
+            <span class="category-eyebrow">Trusted By</span>
+            <h2>Other Notable Creators</h2>
+            <p>London Media Lounge is a trusted studio for some of the UK's leading creators and personalities.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/creator-nathan-connor.png" alt="Nathan Connor TV — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Nathan Connor TV</div>
+                        <p>One of the UK's most trusted creators, Nathan Connor regularly uses the studio for collaboration content with creators from across the UK. Its easy motorway access makes it the natural hub for high-level collaborative productions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/creator-dr-vanita.png" alt="Dr Vanita Rattan — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Dr Vanita Rattan</div>
+                        <p>A leading UK educator in skincare for skin of colour, Dr Vanita Rattan uses London Media Lounge for content production and filming, benefiting from a fully equipped professional environment outside central London.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/creator-hazzy.png" alt="Hazzy's Hype — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Hazzy's Hype</div>
+                        <p>Hazzy uses London Media Lounge as a base for creating podcast content and testing new ideas. The convenience, professional setup, and easy access make it ideal for consistent filming and collaboration.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/creator-kireth.png" alt="Kireth — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Kireth</div>
+                        <p>A well-established UK creator in the sim racing space with over 100K subscribers and 60M+ views on YouTube. We support Kireth with studio use for content production whenever needed.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="80">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/creator-sarover.png" alt="Offscript with Sarover — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Offscript with Sarover</div>
+                        <p>Known for his appearance on Love Is Blind UK, Sarover uses the studio for content creation, podcasting, and collaborations — benefiting from a premium setup and a convenient location outside of central London.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="160">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/creator-teddy.png" alt="Teddy Talks — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Teddy Talks</div>
+                        <p>Known for his appearance on Love Island UK, Teddy Soares uses London Media Lounge to film high-quality content without the hassle of central London travel — a go-to location for collaborations and media production.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="stripe-purple"></div>
+
+<!-- ====== INTERNATIONAL CREATORS ====== -->
+<section class="section-dark">
+    <div class="container">
+
+        <div class="portfolio-category-header" data-aos="fade-up">
+            <span class="category-eyebrow">Global Reach</span>
+            <h2>International Creators</h2>
+            <p>London Media Lounge attracts creators from around the world, cementing its reputation as a globally recognised production destination.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="0">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/intl-the-fix.png" alt="The Fix JA — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">The Fix JA</div>
+                        <p>One of the biggest shows in Jamaica and across the West Indies, with over 350K subscribers and 90M+ views on YouTube. Choosing London Media Lounge highlights our ability to attract international, high-level productions.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/intl-dr-youcef.png" alt="Dr Youcef Al Hasan — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Dr Youcef Al Hasan</div>
+                        <p>A creator from Kuwait who has been producing content with us for over two years. His educational channel reaches a wide audience across the region, generating millions of views through consistent, high-quality production.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="creator-card">
+                    <img loading="lazy" class="creator-card-img" src="assets/portfolio/intl-bishtar.png" alt="Bishtar Azyek — London Media Lounge">
+                    <div class="creator-card-body">
+                        <div class="creator-card-name">Bishtar Azyek</div>
+                        <p>An international creator producing short-form content for a global audience. His videos have generated millions and millions of views, driven by a strong focus on consistent, engaging short-form output produced at our studio.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<div class="stripe-purple"></div>
+
+<!-- ====== SOCIAL MEDIA CONTENT ====== -->
+<section class="section-darkest">
+    <div class="container">
+
+        <div class="portfolio-category-header" data-aos="fade-up">
+            <span class="category-eyebrow">Content Creation</span>
+            <h2>Social Media Content</h2>
+            <p>From on-location shoots to in-studio productions — we create content that performs across every platform.</p>
+        </div>
+
+        <div class="row g-5">
+            <div class="col-lg-6" data-aos="fade-right">
+                <p class="social-sub-label">On Location</p>
+                <div class="social-grid">
+                    <div class="social-grid-item"><img loading="lazy" src="assets/portfolio/social-4.png" alt="On location shoot"></div>
+                    <div class="social-grid-item"><img loading="lazy" src="assets/portfolio/social-1.png" alt="On location shoot"></div>
+                    <div class="social-grid-item"><img loading="lazy" src="assets/portfolio/social-2.png" alt="On location shoot"></div>
+                </div>
+            </div>
+            <div class="col-lg-6" data-aos="fade-left">
+                <p class="social-sub-label">In Studio</p>
+                <div class="social-grid">
+                    <div class="social-grid-item"><img loading="lazy" src="assets/portfolio/social-3.png" alt="In studio production"></div>
+                    <div class="social-grid-item"><img loading="lazy" src="assets/portfolio/social-5.png" alt="In studio production"></div>
+                    <div class="social-grid-item"><img loading="lazy" src="assets/portfolio/social-6.png" alt="In studio production"></div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- ====== CTA ====== -->
+<section class="cta-section">
+    <div class="container" data-aos="zoom-in">
+        <h3 class="heading-bold mb-3" style="font-size:clamp(1.4rem,3vw,2rem);">Ready to Build Your Platform?</h3>
+        <p style="color:var(--text-body); margin-bottom:2rem;">Join the creators who trust London Media Lounge to grow their audience and produce world-class content.</p>
+        <a href="contact.html" class="btn-accent btn-accent-lg">Get In Touch</a>
+    </div>
+</section>
+
+<!-- ====== FOOTER ====== -->
+<footer class="footer-main">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-4">
+                <img loading="lazy" decoding="async" src="assets/logo-white.png" alt="London Media Lounge" class="footer-logo">
+                <p style="color:var(--text-muted); font-size:0.85rem; line-height:1.7; max-width:280px;">London's premier podcast and media production studio. Bringing your ideas to life with professional precision and a personal touch.</p>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-heading">Services</h6>
+                <ul class="footer-links">
+                    <li><a href="services.html#creative">Creative Studios</a></li>
+                    <li><a href="services.html#greenscreen">Green Screen</a></li>
+                    <li><a href="services.html#voiceover">Voiceover Studio</a></li>
+                    <li><a href="services.html#dryhire">Dry Hire</a></li>
+                </ul>
+            </div>
+            <div class="col-6 col-lg-2">
+                <h6 class="footer-heading">Company</h6>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="col-lg-4">
+                <h6 class="footer-heading">Contact</h6>
+                <ul class="footer-links">
+                    <li><a href="mailto:studio@londonmedialounge.co.uk"><i class="bi bi-envelope" style="color:var(--purple-light);"></i> studio@londonmedialounge.co.uk</a></li>
+                    <li><a href="tel:+447700175079"><i class="bi bi-telephone" style="color:var(--purple-light);"></i> 07700 175079</a></li>
+                    <li><a href="contact.html"><i class="bi bi-geo-alt" style="color:var(--purple-light);"></i> 16A&ndash;17A Windsor St, Uxbridge UB8 1AB</a></li>
+                    <li><a href="https://calendly.com/lmlstudios/30min" target="_blank" rel="noopener noreferrer"><i class="bi bi-calendar-event" style="color:var(--purple-light);"></i> Book a Call</a></li>
+                </ul>
+                <div class="d-flex gap-2 mt-3">
+                    <a href="https://www.instagram.com/londonmedialoungeuk/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="bi bi-instagram"></i></a>
+                    <a href="https://www.youtube.com/channel/UC1lhApdrV06e3BqA87CX6MQ" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="bi bi-youtube"></i></a>
+                    <a href="https://www.linkedin.com/company/londonmedialounge/" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    <a href="https://twitter.com/MediaLml" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://www.facebook.com/londonmedialounge" target="_blank" rel="noopener noreferrer" class="social-icon"><i class="bi bi-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p class="mb-0">&copy; 2026 London Media Lounge Ltd. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+    AOS.init({ once: true, easing: 'ease-out-cubic', duration: 800 });
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+        navbar.style.boxShadow = window.scrollY > 50 ? '0 4px 30px rgba(0,0,0,0.4)' : 'none';
+    });
+</script>
+<script src="chat-widget.js"></script>
+</body>
+</html>
